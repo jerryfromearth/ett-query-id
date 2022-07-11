@@ -26,11 +26,16 @@ var result = function (user) {
 var init = function () {
   $("body").empty();
 
-  $("body").append($("<input>").attr("id", "user_name_append"));
+  $("body").append(
+    $("<input>")
+      .attr("id", "user_name_append")
+      .attr("placeholder", "ETT用户名，大小写精确匹配")
+      .attr("size", "50")
+  );
 
   $("#user_name_append").after(
     $("<button>")
-      .text("确定")
+      .text("查询")
       .click(function () {
         $("DIV").remove();
         $("body").append($("<DIV>").attr("id", "content"));
