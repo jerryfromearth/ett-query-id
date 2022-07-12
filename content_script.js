@@ -59,7 +59,9 @@ var init = function () {
             }
 
             if (data.data.length < 1) {
-              alert("未匹配到用户:" + userName);
+              $("#content").html(
+                `未匹配到用户: ${userName}。请去<a href="https://elevenvr.net/search" target="blank">官网</a> 查找你的完整用户名`
+              );
               return;
             }
 
@@ -72,7 +74,9 @@ var init = function () {
               }
             }
             if (!matchedUser) {
-              alert("未匹配到用户:" + userName);
+              $("#content").html(
+                `未精确匹配到用户: ${userName}。请去<a href="https://elevenvr.net/search" target="blank">官网</a> 查找你的完整用户名`
+              );
               return;
             }
             try {
